@@ -54,7 +54,7 @@ app.post("/login", async(req,res)=>{
 
         return res.status(200).send({
             token: token,
-            user
+            role: user.role,
         })
     }else{  
         return res.status(401).send("wrong credentials");
