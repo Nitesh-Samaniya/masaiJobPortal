@@ -25,6 +25,9 @@ const UserSchema = new Schema({
         enum: ["admin", "user"],
         default : "user"
     }
+},{
+    timestamps: true,
+    versionKey: false,
 });
 
 const UserModel = new model("user",UserSchema);

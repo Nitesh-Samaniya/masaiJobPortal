@@ -9,6 +9,7 @@ const connect = require("./congig/db");
 const PORT = process.env.PORT;
 
 const UserRoute = require("./routes/user.route");
+const JobROute = require("./routes/job.route");
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
 app.use("/user", UserRoute);
+app.use("/job", JobROute);
 
 mongoose.set("strictQuery", false);
 
