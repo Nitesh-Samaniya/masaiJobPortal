@@ -26,6 +26,16 @@ app.post("/create", async(req,res)=>{
         }
 })
 
+app.delete("/:id", async(req,res)=>{
+    const {id} = req.params;
+    try{
+        const afterDelete = await JobModel.findByIdAndDelete(id);
+        return res.status(200).send({message: "post deleted successfully", afterDelete});
+    }catch(e){
+        return res.status(500).send(e);
+    }
+})
+
 
 
 module.exports = app;
